@@ -7,7 +7,9 @@ url = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
 
 def test_item(browser):
     browser.get(url)
-    WebDriverWait(browser, 15).until(EC.visibility_of_element_located((By.CSS_SELECTOR, 'button.btn-add-to-basket')))
+    book = WebDriverWait(browser, 15).until(EC.visibility_of_element_located((By.CSS_SELECTOR, 'button.btn-add-to-basket')))
+
+    assert book is not None
 
 
 
